@@ -84,8 +84,11 @@ You can upload .pdf or .txt files directly from the Streamlit UI.
 The system will:
 
 ✅ Read content
+
 ✅ Chunk text
+
 ✅ Generate embeddings
+
 ✅ Store vectors in Pinecone
 
 No manual ingestion script is required.
@@ -95,6 +98,7 @@ No manual ingestion script is required.
 You can query documents in two ways:
 
 ✅ Using Streamlit UI (recommended)
+
 Open the web UI and chat.
 
 ✅ Using API directly:
@@ -105,25 +109,40 @@ curl "http://127.0.0.1:8000/ask?query=What is termination clause?"
 
 project/
 │ backend.py               # FastAPI backend
+
 │ frontend.py           # Streamlit UI
+
 │ requirements.txt
+
 │ README.md
+
 | .gitignore
+
 │ .env
+
 │
+
 └── documents/          # (optional) local storage
 
 🔄 Workflow Summary
 markdown
 
 1. Upload documents via Streamlit
+
 2. System embeds and stores chunks in Pinecone
+
 3. User enters question
+
 4. System retrieves relevant chunks
+
 5. Sends context + question to Groq LLM
+
 6. Returns answer with cited sources
+
 7. 
+
 ✅ TODO (future improvements)
+
  Doc duplicate detection via hashing
 
  Add support for DOCX + HTML
@@ -135,14 +154,21 @@ markdown
  Streamed responses
 
 🛠 Troubleshooting
+
 Issue	Fix
+
 Backend not responding	Make sure FastAPI is running
+
 Pinecone errors	Check .env API key & index name
+
 No answer returned	Ensure some docs are uploaded first
+
 CORS blocked	Use --reload or enable CORS in FastAPI
 
 📜 License
+
 MIT — feel free to use, modify, distribute.
 
 ✨ Author
-Made by uzair using Groq + Pinecone + FastAPI + Streamlit
+
+Made by Uzair using Groq + Pinecone + FastAPI + Streamlit
