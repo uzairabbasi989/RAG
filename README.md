@@ -136,10 +136,7 @@ markdown
 4. System retrieves relevant chunks
 
 5. Sends context + question to Groq LLM
-
-6. Returns answer with cited sources
-
-7. 
+ 
 
 ✅ TODO (future improvements)
 
