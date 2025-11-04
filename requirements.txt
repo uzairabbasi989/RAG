@@ -1,0 +1,11 @@
+pypdf
+pypdf2
+sentence-transformers
+pinecone
+streamlit
+groq
+fastapi
+python-multipart
+uvicorn
+python-dotenv
+requests
