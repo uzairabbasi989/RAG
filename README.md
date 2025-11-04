@@ -28,12 +28,15 @@ A Retrieval-Augmented Generation (RAG) based legal assistant that allows you to:
 ### 1️⃣ Clone repo & enter project
 
 git clone https://github.com/uzairabbasi989/RAG
+
 cd project
 
 2️⃣ Create Virtual Environment
 
 python -m venv venv
+
 source venv/bin/activate       # Mac/Linux
+
 venv\Scripts\activate          # Windows
 
 3️⃣ Install dependencies
@@ -43,7 +46,9 @@ pip install -r requirements.txt
 4️⃣ Create .env file
 
 PINECONE_API_KEY=your_key_here
+
 GROQ_API_KEY=your_key_here
+
 INDEX_NAME=legal-index
 
 🗂️ 2. Run Backend (FastAPI)
@@ -51,9 +56,11 @@ INDEX_NAME=legal-index
 uvicorn main:app --reload
 
 Backend will run at:
+
 ➡️ http://127.0.0.1:8000
 
 API Docs available at:
+
 ➡️ http://127.0.0.1:8000/docs
 
 💻 3. Run Frontend (Streamlit)
@@ -61,6 +68,7 @@ API Docs available at:
 streamlit run frontend.py
 
 Frontend will open in browser automatically.
+
 Used for:
 
 Uploading documents
@@ -70,6 +78,7 @@ Asking questions
 Chat-like Q/A interface
 
 📤 4. Upload Documents
+
 You can upload .pdf or .txt files directly from the Streamlit UI.
 
 The system will:
@@ -82,6 +91,7 @@ The system will:
 No manual ingestion script is required.
 
 💬 5. Ask Questions
+
 You can query documents in two ways:
 
 ✅ Using Streamlit UI (recommended)
@@ -92,8 +102,7 @@ Open the web UI and chat.
 curl "http://127.0.0.1:8000/ask?query=What is termination clause?"
 
 📁 Project Structure
-bash
-Copy code
+
 project/
 │ backend.py               # FastAPI backend
 │ frontend.py           # Streamlit UI
@@ -103,6 +112,7 @@ project/
 │ .env
 │
 └── documents/          # (optional) local storage
+
 🔄 Workflow Summary
 markdown
 
