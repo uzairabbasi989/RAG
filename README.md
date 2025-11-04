@@ -2,14 +2,14 @@
 
 A Retrieval-Augmented Generation (RAG) based legal assistant that allows you to:
 
-Upload documents (PDF/TXT)  
- Store & embed them into Pinecone  
-Ask legal questions using natural language  
-Get responses powered by Groq LLM + document context  
+✅ Upload documents (PDF/TXT)  
+✅ Store & embed them into Pinecone  
+✅ Ask legal questions using natural language  
+✅ Get responses powered by Groq LLM + document context  
 
 ---
 
-## Tech Stack
+## 🚀 Tech Stack
 
 | Layer | Tech |
 |-------|------|
@@ -25,39 +25,40 @@ Get responses powered by Groq LLM + document context
 
 ## 🔧 1. Setup & Installation
 
-### Clone repo & enter project
+### 1️⃣ Clone repo & enter project
 
-
+```bash
 git clone <your-repo-url>
 cd project
-
-Create Virtual Environment
-
+2️⃣ Create Virtual Environment
+bash
+Copy code
 python -m venv venv
 source venv/bin/activate       # Mac/Linux
 venv\Scripts\activate          # Windows
-
-Install dependencies
-
+3️⃣ Install dependencies
+bash
+Copy code
 pip install -r requirements.txt
-
-Create .env file
-
+4️⃣ Create .env file
+ini
+Copy code
 PINECONE_API_KEY=your_key_here
 GROQ_API_KEY=your_key_here
 INDEX_NAME=legal-index
-
-Run Backend (FastAPI)
-
+🗂️ 2. Run Backend (FastAPI)
+bash
+Copy code
 uvicorn main:app --reload
 Backend will run at:
-http://127.0.0.1:8000
+➡️ http://127.0.0.1:8000
 
 API Docs available at:
-http://127.0.0.1:8000/docs
+➡️ http://127.0.0.1:8000/docs
 
-Run Frontend (Streamlit)
-
+💻 3. Run Frontend (Streamlit)
+bash
+Copy code
 streamlit run frontend.py
 Frontend will open in browser automatically.
 Used for:
@@ -68,7 +69,7 @@ Asking questions
 
 Chat-like Q/A interface
 
-Upload Documents
+📤 4. Upload Documents
 You can upload .pdf or .txt files directly from the Streamlit UI.
 
 The system will:
@@ -78,15 +79,17 @@ The system will:
 ✅ Generate embeddings
 ✅ Store vectors in Pinecone
 
+No manual ingestion script is required.
 
-Ask Questions
+💬 5. Ask Questions
 You can query documents in two ways:
 
-Using Streamlit UI (recommended)
+✅ Using Streamlit UI (recommended)
 Open the web UI and chat.
 
-Using API directly:
-
+✅ Using API directly:
+bash
+Copy code
 curl "http://127.0.0.1:8000/ask?query=What is termination clause?"
 📁 Project Structure
 bash
@@ -101,14 +104,13 @@ project/
 └── documents/          # (optional) local storage
 🔄 Workflow Summary
 markdown
-
+Copy code
 1. Upload documents via Streamlit
 2. System embeds and stores chunks in Pinecone
 3. User enters question
 4. System retrieves relevant chunks
 5. Sends context + question to Groq LLM
 6. Returns answer with cited sources
-
 ✅ TODO (future improvements)
  Doc duplicate detection via hashing
 
@@ -127,10 +129,8 @@ Pinecone errors	Check .env API key & index name
 No answer returned	Ensure some docs are uploaded first
 CORS blocked	Use --reload or enable CORS in FastAPI
 
-License
+📜 License
 MIT — feel free to use, modify, distribute.
 
-Author
-Made by uzair  using Groq + Pinecone + FastAPI + Streamlit
-
-
+✨ Author
+Made by uzair using Groq + Pinecone + FastAPI + Streamlit
