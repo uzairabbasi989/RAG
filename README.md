@@ -27,29 +27,29 @@ A Retrieval-Augmented Generation (RAG) based legal assistant that allows you to:
 
 ### 1️⃣ Clone repo & enter project
 
-```bash
 git clone <your-repo-url>
 cd project
+
 2️⃣ Create Virtual Environment
-bash
-Copy code
+
 python -m venv venv
 source venv/bin/activate       # Mac/Linux
 venv\Scripts\activate          # Windows
+
 3️⃣ Install dependencies
-bash
-Copy code
+
 pip install -r requirements.txt
+
 4️⃣ Create .env file
-ini
-Copy code
+
 PINECONE_API_KEY=your_key_here
 GROQ_API_KEY=your_key_here
 INDEX_NAME=legal-index
+
 🗂️ 2. Run Backend (FastAPI)
-bash
-Copy code
+
 uvicorn main:app --reload
+
 Backend will run at:
 ➡️ http://127.0.0.1:8000
 
@@ -57,9 +57,9 @@ API Docs available at:
 ➡️ http://127.0.0.1:8000/docs
 
 💻 3. Run Frontend (Streamlit)
-bash
-Copy code
+
 streamlit run frontend.py
+
 Frontend will open in browser automatically.
 Used for:
 
@@ -88,29 +88,31 @@ You can query documents in two ways:
 Open the web UI and chat.
 
 ✅ Using API directly:
-bash
-Copy code
+
 curl "http://127.0.0.1:8000/ask?query=What is termination clause?"
+
 📁 Project Structure
 bash
 Copy code
 project/
-│ main.py               # FastAPI backend
+│ backend.py               # FastAPI backend
 │ frontend.py           # Streamlit UI
 │ requirements.txt
 │ README.md
+| .gitignore
 │ .env
 │
 └── documents/          # (optional) local storage
 🔄 Workflow Summary
 markdown
-Copy code
+
 1. Upload documents via Streamlit
 2. System embeds and stores chunks in Pinecone
 3. User enters question
 4. System retrieves relevant chunks
 5. Sends context + question to Groq LLM
 6. Returns answer with cited sources
+7. 
 ✅ TODO (future improvements)
  Doc duplicate detection via hashing
 
