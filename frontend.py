@@ -3,7 +3,7 @@ import requests
 import PyPDF2
 
 st.set_page_config(page_title="Legal Assistant", layout="wide")
-st.title("📱 Legal Assistant")
+st.title("📚 Legal Assistant")
 
 # -------------------------
 # Initialize session state
