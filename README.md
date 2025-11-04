@@ -27,7 +27,7 @@ A Retrieval-Augmented Generation (RAG) based legal assistant that allows you to:
 
 ### 1️⃣ Clone repo & enter project
 
-git clone <your-repo-url>
+git clone https://github.com/uzairabbasi989/RAG
 cd project
 
 2️⃣ Create Virtual Environment
