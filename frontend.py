@@ -52,7 +52,7 @@ st.subheader("Ask Legal Questions")
 
 # Display chat messages
 for msg in st.session_state.messages:
-    color = "#DCF8C6" if msg["role"] == "user" else "#FFFFFF"
+    color = "#A81010" if msg["role"] == "user" else "#607CA0"
     align = "right" if msg["role"] == "user" else "left"
     st.markdown(
         f'<div style="text-align: {align}; background-color:{color}; padding:8px; border-radius:10px; margin:5px;">{msg["content"]}</div>',
@@ -68,7 +68,7 @@ def send_message():
         return
 
     st.session_state.messages.append({"role": "user", "content": user_input})
-
+    
     # Combine uploaded files into a single context string
     context = ""
     for f in uploaded_files:
@@ -83,7 +83,7 @@ def send_message():
                 context += f.getvalue().decode("utf-8") + "\n"
         except Exception:
             continue
-
+    
     backend_url = "http://127.0.0.1:8000/ask"
 
     with st.spinner("Assistant is thinking..."):
